@@ -68,13 +68,13 @@ public class FullBrightCommand implements ICommand {
         if (args.length == 0) {
             sendMessage(getCommandUsage(sender), MessageType.NORMAL);
         } else if (args[0] != null) {
-			int val = 0;
+	    int val = 0;
             try {
                 if (args[0].equalsIgnoreCase("setmax")) {
-					val = 1;
+		    val = 1;
                     GameSettings.Options.GAMMA.setValueMax(Float.valueOf(args[1] != null ? args[1] : "1"));
                 } else {
-					val = 0;
+		    val = 0;
                     FullBright.setLevel(Float.valueOf(args[0]));
                     execute();
                 }
@@ -82,7 +82,6 @@ public class FullBrightCommand implements ICommand {
                 sendMessage("Your number was not valid! Try again.", MessageType.ERROR);
                 sendMessage(String.format("Your input was \"%s\". Make sure it\'s a float", args[val]), MessageType.ERROR);
             }
-
         }
     }
 
